@@ -118,6 +118,24 @@
 
 
 
+  <section class="container">
+    <div id="owl-demo2" class="owl-carousel owl-theme">
+
+        % if settings.FEATURES.get('COURSES_ARE_BROWSABLE'):
+          <!-- <section class="courses"> -->
+              
+              %for course in courses:
+                <div>
+                  <%include file="course.html" args="course=course" />
+                </div>
+              %endfor
+
+          <!-- </section> -->
+        % endif
+
+    </div>
+  </section>
+
 
 
 </section>
@@ -144,24 +162,6 @@
 </%block>
 <script type="text/javascript">
     $(document).ready(function() {
-    //   $("#owl-demo").owlCarousel({
-
-    //   navigation : false,
-    //   // navigation : true,
-    //   slideSpeed : 300,
-    //   paginationSpeed : 400,
-    //   singleItem : true
-
-    //   // "singleItem:true" is a shortcut for:
-    //   // items : 1, 
-    //   // itemsDesktop : false,
-    //   // itemsDesktopSmall : false,
-    //   // itemsTablet: false,
-    //   // itemsMobile : false
-
-
-    //   });
-
         var owl = $("#owl-demo2");
  
         owl.owlCarousel({
