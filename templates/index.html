@@ -68,7 +68,7 @@
       % endif
     </div>
   </header>
-<!--
+
   <section class="container">
     <section class="highlighted-courses">
       <h1>Hello world! :DD</h1>
@@ -86,39 +86,31 @@
 
     </section>
   </section>
--->
+
 
   <!-- Trying to! :D -->
-<!--
 
+
+<!-- Website -->
   <link rel="stylesheet" href="${static.url('themes/stanford/css/custom.css')}" />
   <link rel="stylesheet" href="${static.url('themes/stanford/css/owl.carousel.css')}" />
   <link rel="stylesheet" href="${static.url('themes/stanford/css/owl.theme.css')}" />
 
-<<<<<<< HEAD
-=======
   <script src="${static.url('themes/stanford/js/owl.carousel.js')}"></script>
   <script src="${static.url('themes/stanford/js/jquery-1.9.1.min.js')}"></script>
 
--->
->>>>>>> 746f575c49ab534b6313971747d795ea3b15f843
-
+<!-- github -->
   <link rel="stylesheet" href="${static.url('https://raw.githubusercontent.com/OwlFonk/OwlCarousel2/develop/src/css/owl.carousel.css')}" />
   <link rel="stylesheet" href="${static.url('https://raw.githubusercontent.com/GuilhermeBorges/edx-theme/master/static/css/custom.css')}" />
   <link rel="stylesheet" href="${static.url('https://raw.githubusercontent.com/OwlFonk/OwlCarousel2/develop/src/css/owl.theme.default.css')}" />
 
-
-<<<<<<< HEAD
-  <script src="${static.url('themes/stanford/js/owl.carousel.js')}"></script>
-  <script src="${static.url('themes/stanford/js/jquery-1.9.1.min.js')}"></script>
-
--->
-=======
   <script src="${static.url('http://code.jquery.com/jquery-1.9.1.js')}"></script>
   <script src="${static.url('https://raw.githubusercontent.com/OwlFonk/OwlCarousel2/develop/src/js/owl.carousel.js')}"></script>
-  
 
->>>>>>> 746f575c49ab534b6313971747d795ea3b15f843
+
+
+
+  
   <section class="container">
     <div id="owl-demo3" class="owl-carousel owl-theme">
 
@@ -145,10 +137,14 @@
         % if settings.FEATURES.get('COURSES_ARE_BROWSABLE'):
           <!-- <section class="courses"> -->
               
+              % i = 0
               %for course in courses:
+                % if i < 2
                 <div class = "item">
                   1
                 </div>
+                    % i = i + 1
+                %endif 
               %endfor
 
           <!-- </section> -->
@@ -229,19 +225,6 @@
             itemsTablet: [600,2], //2 items between 600 and 0
             itemsMobile : false // itemsMobile disabled - inherit from itemsTablet option
         });
-        // // Custom Navigation Events
-        //   $(".next").click(function(){
-        //     owl.trigger('owl.next');
-        //   })
-        //   $(".prev").click(function(){
-        //     owl.trigger('owl.prev');
-        //   })
-        //   $(".play").click(function(){
-        //     owl.trigger('owl.play',1000); //owl.play event accept autoPlay speed as second parameter
-        //   })
-        //   $(".stop").click(function(){
-        //     owl.trigger('owl.stop');
-        //   })
   
     });
     </script>
