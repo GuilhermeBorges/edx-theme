@@ -68,6 +68,7 @@
       % endif
     </div>
   </header>
+<!--
   <section class="container">
     <section class="highlighted-courses">
       <h1>Hello world! :DD</h1>
@@ -75,7 +76,7 @@
         <section class="courses">
             <ul class="courses-listing">
             %for course in courses:
-              <li class="courses-listing-item">
+              <li class="courses-listing-item ">
                 <%include file="course.html" args="course=course" />
               </li>
             %endfor
@@ -85,6 +86,79 @@
 
     </section>
   </section>
+-->
+
+  <!-- Trying to! :D -->
+<!--
+
+  <link rel="stylesheet" href="${static.url('themes/stanford/css/custom.css')}" />
+  <link rel="stylesheet" href="${static.url('themes/stanford/css/owl.carousel.css')}" />
+  <link rel="stylesheet" href="${static.url('themes/stanford/css/owl.theme.css')}" />
+
+<<<<<<< HEAD
+=======
+  <script src="${static.url('themes/stanford/js/owl.carousel.js')}"></script>
+  <script src="${static.url('themes/stanford/js/jquery-1.9.1.min.js')}"></script>
+
+-->
+>>>>>>> 746f575c49ab534b6313971747d795ea3b15f843
+
+  <link rel="stylesheet" href="${static.url('https://raw.githubusercontent.com/OwlFonk/OwlCarousel2/develop/src/css/owl.carousel.css')}" />
+  <link rel="stylesheet" href="${static.url('https://raw.githubusercontent.com/GuilhermeBorges/edx-theme/master/static/css/custom.css')}" />
+  <link rel="stylesheet" href="${static.url('https://raw.githubusercontent.com/OwlFonk/OwlCarousel2/develop/src/css/owl.theme.default.css')}" />
+
+
+<<<<<<< HEAD
+  <script src="${static.url('themes/stanford/js/owl.carousel.js')}"></script>
+  <script src="${static.url('themes/stanford/js/jquery-1.9.1.min.js')}"></script>
+
+-->
+=======
+  <script src="${static.url('http://code.jquery.com/jquery-1.9.1.js')}"></script>
+  <script src="${static.url('https://raw.githubusercontent.com/OwlFonk/OwlCarousel2/develop/src/js/owl.carousel.js')}"></script>
+  
+
+>>>>>>> 746f575c49ab534b6313971747d795ea3b15f843
+  <section class="container">
+    <div id="owl-demo3" class="owl-carousel owl-theme">
+
+        % if settings.FEATURES.get('COURSES_ARE_BROWSABLE'):
+          <!-- <section class="courses"> -->
+              
+              %for course in courses:
+                <div class="courses-listing-item">
+                  <%include file="course.html" args="course=course" />
+                </div>
+              %endfor
+
+          <!-- </section> -->
+        % endif
+
+    </div>
+  </section>
+
+
+
+  <section class="container">
+    <div id="owl-demo2" class="owl-carousel owl-theme">
+
+        % if settings.FEATURES.get('COURSES_ARE_BROWSABLE'):
+          <!-- <section class="courses"> -->
+              
+              %for course in courses:
+                <div class = "item">
+                  1
+                </div>
+              %endfor
+
+          <!-- </section> -->
+        % endif
+
+    </div>
+  </section>
+
+
+
 </section>
 
 <section id="video-modal" class="modal home-page-video-modal video-modal">
@@ -106,8 +180,71 @@
          }
       })
    </script>
+   <script type="text/javascript">
+    $(document).ready(function() {
+        var owl = $("#owl-demo2");
+ 
+        owl.owlCarousel({
+            navigation:true,
+            navigationText: [
+              "<i class='icon-chevron-left icon-white'><</i>",
+              "<i class='icon-chevron-right icon-white'>></i>"
+                  ],
+            items : 4, //10 items above 1000px browser width
+            itemsDesktop : [1000,3], //5 items between 1000px and 901px
+            itemsDesktopSmall : [900,3], // betweem 900px and 601px
+            itemsTablet: [600,2], //2 items between 600 and 0
+            itemsMobile : false // itemsMobile disabled - inherit from itemsTablet option
+        });
+        // // Custom Navigation Events
+        //   $(".next").click(function(){
+        //     owl.trigger('owl.next');
+        //   })
+        //   $(".prev").click(function(){
+        //     owl.trigger('owl.prev');
+        //   })
+        //   $(".play").click(function(){
+        //     owl.trigger('owl.play',1000); //owl.play event accept autoPlay speed as second parameter
+        //   })
+        //   $(".stop").click(function(){
+        //     owl.trigger('owl.stop');
+        //   })
+  
+    });
+    </script>
 </%block>
-
+<script type="text/javascript">
+    $(document).ready(function() {
+        var owl = $("#owl-demo2");
+ 
+        owl.owlCarousel({
+            navigation:true,
+            navigationText: [
+              "<i class='icon-chevron-left icon-white'><</i>",
+              "<i class='icon-chevron-right icon-white'>></i>"
+                  ],
+            items : 4, //10 items above 1000px browser width
+            itemsDesktop : [1000,3], //5 items between 1000px and 901px
+            itemsDesktopSmall : [900,3], // betweem 900px and 601px
+            itemsTablet: [600,2], //2 items between 600 and 0
+            itemsMobile : false // itemsMobile disabled - inherit from itemsTablet option
+        });
+        // // Custom Navigation Events
+        //   $(".next").click(function(){
+        //     owl.trigger('owl.next');
+        //   })
+        //   $(".prev").click(function(){
+        //     owl.trigger('owl.prev');
+        //   })
+        //   $(".play").click(function(){
+        //     owl.trigger('owl.play',1000); //owl.play event accept autoPlay speed as second parameter
+        //   })
+        //   $(".stop").click(function(){
+        //     owl.trigger('owl.stop');
+        //   })
+  
+    });
+    </script>
 % if show_signup_immediately is not UNDEFINED:
   ## NOTE: This won't work in production, because anonymous views are cached, so it will
   ## show either with or without this extra js for 3 minutes at a time.
