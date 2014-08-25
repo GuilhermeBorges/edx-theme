@@ -15,9 +15,9 @@ from status.status import get_site_status_msg
 <%! from microsite_configuration.templatetags.microsite import platform_name %>
 
 ## Provide a hook for themes to inject branding on top.
-<!--
-  <%block name="navigation_top" />
--->
+
+<%block name="navigation_top" />
+
 <%block cached="False">
 <%
 try:
@@ -131,11 +131,6 @@ site_status_msg = get_site_status_msg(course_id)
     % endif
   </nav>
 </header>
-
-
-<%block name="navigation_top" />
-
-
 
 
 % if course:
