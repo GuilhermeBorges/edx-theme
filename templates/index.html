@@ -73,10 +73,14 @@
       % if settings.FEATURES.get('COURSES_ARE_BROWSABLE'):
         <section class="courses">
             <ul class="courses-listing">
+            %i = 0
             %for course in courses:
-              <li class="courses-listing-item">
-                <%include file="course.html" args="course=course" />
-              </li>
+              % if i < 2
+                <li class="courses-listing-item">
+                  <%include file="course.html" args="course=course" />
+                </li>
+                % i += 1
+              %endif
             %endfor
             </ul>
         </section>
