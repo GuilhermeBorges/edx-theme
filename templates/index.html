@@ -75,12 +75,46 @@
   <link rel="stylesheet" href="${static.url('https://raw.githubusercontent.com/OwlFonk/OwlCarousel2/develop/src/css/owl.theme.default.css')}" />
 --> 
 
+
+  <h1 style = "color:#3D5E2C"> Fora do container </h1>
+
+    <div style="padding: 40px;">
+      <div id="owl-demo2" class="owl-carousel owl-theme">
+      
+            %for course in courses:
+                <div class="item">
+                  <%include file="course.html" args="course=course" />
+                </div>
+            %endfor
+
+
+
+      </div>
+    </div>
+
+  <h1 style = "color:#3D5E2C"> Fora do container sem a classe item </h1>
+
+    <div style="padding: 40px;">
+      <div id="owl-demo2" class="owl-carousel owl-theme">
+
+            %for course in courses:
+                <div>
+                  <%include file="course.html" args="course=course" />
+                </div>
+            %endfor
+
+
+
+      </div>
+    </div>
+
+
   <section class = "container">
   <h1 style = "color:#3D5E2C"> Curriculum Maps </h1>
 
     <div style="padding: 40px;">
       <div id="owl-demo2" class="owl-carousel owl-theme">
-<!--
+
             <div class="item"><h1>Big Data Concepts</h1></div>
             <div class="item"><h1>Real-Time Analytics</h1></div>
             <div class="item"><h1>Relational Databases</h1></div>
@@ -89,15 +123,21 @@
             <div class="item"><h1>Sponsored Onsite Events</h1></div>
             <div class="item"><h1>Miscellaneous</h1></div>
             <div class="item"><h1>In Other Languages</h1></div>
-            
--->
+
+
+      </div>
+    </div>
+
+  <h1 style = "color:#3D5E2C"> Cursos em Destaque</h1>
+
+    <div style="padding: 40px;">
+      <div id="owl-demo2" class="owl-carousel owl-theme">
+
             %for course in courses:
                 <div class="item">
                   <%include file="course.html" args="course=course" />
                 </div>
             %endfor
-
-
 
       </div>
     </div>
