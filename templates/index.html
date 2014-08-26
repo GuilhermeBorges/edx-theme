@@ -76,29 +76,13 @@
 --> 
 
 
-  <h1 style = "color:#3D5E2C"> Fora do container </h1>
+  <h1 style = "color:#3D5E2C"> Cursos em Destaque </h1>
 
     <div style="padding: 40px;">
-      <div id="owl-demo2" class="owl-carousel owl-theme owl-demo2">
-      
+      <div id="owl-demo2" class="owl-carousel owl-theme">
+
             %for course in courses:
                 <div class="item">
-                  <%include file="course.html" args="course=course" />
-                </div>
-            %endfor
-
-
-
-      </div>
-    </div>
-
-  <h1 style = "color:#3D5E2C"> Fora do container sem a classe item </h1>
-
-    <div style="padding: 40px;">
-      <div id="owl-demo3" class="owl-carousel owl-theme owl-demo2">
-
-            %for course in courses:
-                <div>
                   <%include file="course.html" args="course=course" />
                 </div>
             %endfor
@@ -113,7 +97,7 @@
   <h1 style = "color:#3D5E2C"> Curriculum Maps </h1>
 
     <div style="padding: 40px;">
-      <div id="cm" class="owl-carousel owl-theme owl-demo2">
+      <div id="cm" class="owl-carousel owl-theme">
 
             <div class="item"><h1>Big Data Concepts</h1></div>
             <div class="item"><h1>Real-Time Analytics</h1></div>
@@ -128,27 +112,12 @@
       </div>
     </div>
 
-  <h1 style = "color:#3D5E2C"> Cursos em Destaque</h1>
-
-    <div style="padding: 40px;">
-      <div id="owl-demo4" class="owl-carousel owl-theme owl-demo2">
-
-            %for course in courses:
-                <div class="item">
-                  <%include file="course.html" args="course=course" />
-                </div>
-            %endfor
-
-      </div>
-    </div>
-
   </section>
 
 
 
 
   <section class="container">
-  <h1 style = "color:#3D5E2C"> Cursos em Destaque </h1>
     <section class="highlighted-courses">
 
 <!--
@@ -164,20 +133,6 @@
         </section>
       % endif
 -->
-
-
-    <div style="padding: 40px;">
-      <div id="owl-demo5" class="owl-carousel owl-theme owl-demo2">
-            %for course in courses:
-                <div class="item">
-                  <%include file="course.html" args="course=course" />
-                </div>
-            %endfor
-      </div>
-    </div>
-
-
-
 
     </section> <!-- highlighted-courses -->
   </section> <!-- container -->
@@ -235,7 +190,21 @@
     //   });
 
         var owl = $("#owl-demo2");
- 
+        var cm = $("#cm");
+        
+        cm.owlCarousel({
+            navigation:true,
+            navigationText: [
+              "<i class='icon-chevron-left icon-white'><</i>",
+              "<i class='icon-chevron-right icon-white'>></i>"
+                  ],
+            items : 3, //10 items above 1000px browser width
+            itemsDesktop : [1000,3], //5 items between 1000px and 901px
+            itemsDesktopSmall : [900,3], // betweem 900px and 601px
+            itemsTablet: [600,2], //2 items between 600 and 0
+            itemsMobile : false // itemsMobile disabled - inherit from itemsTablet option
+        });
+
         owl.owlCarousel({
             navigation:true,
             navigationText: [
@@ -262,64 +231,6 @@
         //     owl.trigger('owl.stop');
         //   })
   
-    });
-        var cm = $("#cm");
-        var owl3 = $("#owl-demo3");
-        var owl4 = $("#owl-demo4");
-        var owl5 = $("#owl-demo5");
-        
- 
-        cm.owlCarousel({
-            navigation:true,
-            navigationText: [
-              "<i class='icon-chevron-left icon-white'><</i>",
-              "<i class='icon-chevron-right icon-white'>></i>"
-                  ],
-            items : 3, //10 items above 1000px browser width
-            itemsDesktop : [1000,3], //5 items between 1000px and 901px
-            itemsDesktopSmall : [900,3], // betweem 900px and 601px
-            itemsTablet: [600,2], //2 items between 600 and 0
-            itemsMobile : false // itemsMobile disabled - inherit from itemsTablet option
-        });        
- 
-        owl3.owlCarousel({
-            navigation:true,
-            navigationText: [
-              "<i class='icon-chevron-left icon-white'><</i>",
-              "<i class='icon-chevron-right icon-white'>></i>"
-                  ],
-            items : 3, //10 items above 1000px browser width
-            itemsDesktop : [1000,3], //5 items between 1000px and 901px
-            itemsDesktopSmall : [900,3], // betweem 900px and 601px
-            itemsTablet: [600,2], //2 items between 600 and 0
-            itemsMobile : false // itemsMobile disabled - inherit from itemsTablet option
-        });        
- 
-        owl4.owlCarousel({
-            navigation:true,
-            navigationText: [
-              "<i class='icon-chevron-left icon-white'><</i>",
-              "<i class='icon-chevron-right icon-white'>></i>"
-                  ],
-            items : 3, //10 items above 1000px browser width
-            itemsDesktop : [1000,3], //5 items between 1000px and 901px
-            itemsDesktopSmall : [900,3], // betweem 900px and 601px
-            itemsTablet: [600,2], //2 items between 600 and 0
-            itemsMobile : false // itemsMobile disabled - inherit from itemsTablet option
-        });        
- 
-        owl5.owlCarousel({
-            navigation:true,
-            navigationText: [
-              "<i class='icon-chevron-left icon-white'><</i>",
-              "<i class='icon-chevron-right icon-white'>></i>"
-                  ],
-            items : 3, //10 items above 1000px browser width
-            itemsDesktop : [1000,3], //5 items between 1000px and 901px
-            itemsDesktopSmall : [900,3], // betweem 900px and 601px
-            itemsTablet: [600,2], //2 items between 600 and 0
-            itemsMobile : false // itemsMobile disabled - inherit from itemsTablet option
-        });
     });
     </script>
 <!-- owl.theme -->
@@ -617,7 +528,19 @@
     height: auto;
 }
 
-.owl-demo2 .item{
+#owl-demo2 .item{
+  background: #3fbf79;
+  /*width: 360px;*/
+  height: 200px;
+  /*padding: 30px 0px;*/
+  margin: 10px;
+  color: #FFF;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  text-align: center;
+}
+#cm .item{
   background: #3fbf79;
   /*width: 360px;*/
   height: 200px;
@@ -635,7 +558,7 @@
 }
 
 /*
-.owl-demo2 .item{
+#owl-demo2 .item{
   background: #3fbf79;
   padding: 30px 0px;
   margin: 10px;
