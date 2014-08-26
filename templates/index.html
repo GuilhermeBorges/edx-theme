@@ -67,27 +67,28 @@
       % endif
     </div>
   </header>
+
+
+  <script src="${static.url('http://code.jquery.com/jquery-1.9.1.js')}"></script>
+
+
   <section class="container">
     <section class="highlighted-courses">
 
       % if settings.FEATURES.get('COURSES_ARE_BROWSABLE'):
         <section class="courses">
             <ul class="courses-listing">
-            %i = 0
             %for course in courses:
-              % if i < 2
                 <li class="courses-listing-item">
                   <%include file="course.html" args="course=course" />
                 </li>
-                % i += 1
-              %endif
             %endfor
             </ul>
         </section>
       % endif
 
-    </section>
-  </section>
+    </section> <!-- highlighted-courses -->
+  </section> <!-- container -->
 </section>
 
 <section id="video-modal" class="modal home-page-video-modal video-modal">
