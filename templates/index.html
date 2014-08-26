@@ -75,28 +75,21 @@
   <link rel="stylesheet" href="${static.url('https://raw.githubusercontent.com/OwlFonk/OwlCarousel2/develop/src/css/owl.theme.default.css')}" />
 --> 
 
-  <div>
+  <section class = "container">
+  <h1 style = "color:#3D5E2C"> Curriculum Maps </h1>
+
     <div style="padding: 40px;">
       <div id="owl-demo2" class="owl-carousel owl-theme">
-<!--             
-            <div class="item"><h1>1</h1></div>
-            <div class="item"><h1>2</h1></div>
-            <div class="item"><h1>3</h1></div>
-            <div class="item"><h1>4</h1></div>
-            <div class="item"><h1>5</h1></div>
+             
+            <div class="item"><h1>Big Data Concepts</h1></div>
+            <div class="item"><h1>Real-Time Analytics</h1></div>
+            <div class="item"><h1>Relational Databases</h1></div>
+            <div class="item"><h1>Hadoop Core</h1></div>
+            <div class="item"><h1>Data Analytics</h1></div>
             <div class="item"><h1>6</h1></div>
             <div class="item"><h1>7</h1></div>
             <div class="item"><h1>8</h1></div>
             <div class="item"><h1>9</h1></div>
-            <div class="item"><h1>10</h1></div>
-            <div class="item"><h1>11</h1></div>
-            <div class="item"><h1>12</h1></div>
-            <div class="item"><h1>13</h1></div>
-            <div class="item"><h1>14</h1></div>
-            <div class="item"><h1>15</h1></div>
-            <div class="item"><h1>16</h1></div>
-            <div class="item"><h1>17</h1></div>
--->
 <!--
             %for course in courses:
                 <div class="item">
@@ -104,28 +97,21 @@
                 </div>
             %endfor
 -->
-        <section class="courses">
-            <ul class="courses-listing">
-            %for course in courses:
-              <div class="item">
-                  <li class="courses-listing-item">
-                    <%include file="course.html" args="course=course" />
-                  </li>
-              </div>
-            %endfor
-            </ul>
-        </section>
-
 
 
 
       </div>
-    </div>  
-  </div>
-  
+    </div>
+
+  </section>
+
+
+
+
   <section class="container">
-  <h1> Cursos em Destaque </h1>
+  <h1 style = "color:#3D5E2C"> Cursos em Destaque </h1>
     <section class="highlighted-courses">
+
 <!--
       % if settings.FEATURES.get('COURSES_ARE_BROWSABLE'):
         <section class="courses">
@@ -139,6 +125,21 @@
         </section>
       % endif
 -->
+
+
+    <div style="padding: 40px;">
+      <div id="owl-demo2" class="owl-carousel owl-theme">
+            %for course in courses:
+                <div class="item">
+                  <%include file="course.html" args="course=course" />
+                </div>
+            %endfor
+      </div>
+    </div>
+
+
+
+
     </section> <!-- highlighted-courses -->
   </section> <!-- container -->
 </section>
@@ -520,7 +521,7 @@
 }
 
 #owl-demo2 .item{
-  background: #3fbf79;
+  /*background: #3fbf79;*/
   /*width: 360px;*/
   height: 200px;
   /*padding: 30px 0px;*/
