@@ -69,15 +69,16 @@
   </header>
 
 
-
+<!--
   <script src="${static.url('http://code.jquery.com/jquery-1.9.1.js')}"></script>
   <link rel="stylesheet" href="${static.url('https://raw.githubusercontent.com/OwlFonk/OwlCarousel2/develop/src/css/owl.carousel.css')}" />
   <link rel="stylesheet" href="${static.url('https://raw.githubusercontent.com/OwlFonk/OwlCarousel2/develop/src/css/owl.theme.default.css')}" />
-  
+--> 
+
   <div>
     <div style="padding: 40px;">
       <div id="owl-demo2" class="owl-carousel owl-theme">
-            
+<!--             
             <div class="item"><h1>1</h1></div>
             <div class="item"><h1>2</h1></div>
             <div class="item"><h1>3</h1></div>
@@ -95,6 +96,11 @@
             <div class="item"><h1>15</h1></div>
             <div class="item"><h1>16</h1></div>
             <div class="item"><h1>17</h1></div>
+-->
+            %for course in courses:
+                <div class="courses-listing-item">
+                  <%include file="course.html" args="course=course" />
+                </div>
       </div>
     </div>  
   </div>
