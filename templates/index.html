@@ -97,11 +97,28 @@
             <div class="item"><h1>16</h1></div>
             <div class="item"><h1>17</h1></div>
 -->
+<!--
             %for course in courses:
                 <div class="item">
                   <%include file="course.html" args="course=course" />
                 </div>
             %endfor
+-->
+        <section class="courses">
+            <ul class="courses-listing">
+            %for course in courses:
+              <div class="item">
+                  <li class="courses-listing-item">
+                    <%include file="course.html" args="course=course" />
+                  </li>
+              </div>
+            %endfor
+            </ul>
+        </section>
+
+
+
+
       </div>
     </div>  
   </div>
